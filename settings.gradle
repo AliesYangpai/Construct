@@ -1,0 +1,24 @@
+pluginManagement {
+    /**
+     * gradle相关插件管理
+     * 指定的gradle插件版本会到对应的仓库服务器中下载
+     */
+    repositories {
+        google() // gradle插件管理-仓（插件所在仓）-google
+        mavenCentral() // gradle插件管理-仓（插件所在仓）-mavenCentral
+        gradlePluginPortal() // gradle插件管理-插件入口
+    }
+}
+dependencyResolutionManagement {
+    /**
+     * 全局业务依赖库管理
+     * module.gradle会到此处指定的仓库服务器中下载
+     */
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Construct"
+include ':app'
