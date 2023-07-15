@@ -42,3 +42,45 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
+
+/**
+ * 01、字符串拼接
+ * 02、def声明
+ * 03、list map 定义
+ * 04、方法定义与调用
+ */
+task work01 {
+    def tip1 = "xigua"
+    println "work01 tip1:$tip1"
+}
+
+task work02 {
+    def tip1 = "xigua"
+    def tip2 = "nangua"
+    println "work02 tip1:$tip1 tip2:$tip2"
+}
+
+task work03 {
+    def list= []
+    list[0] = 0
+    list[1] = 1
+    list.each {
+        println "work03 size:${list.size()} it:$it"
+    }
+}
+
+task work04 {
+    def map = [:]
+    map.name = "xigua"
+    map.age = "10"
+    println "work04 name:${map.name} size:${map.size()}"
+}
+
+task work05 {
+    int value = funWork05(5,4)
+    println("work5 value:$value")
+}
+
+def funWork05(int a,int b) {
+    a+b
+}
