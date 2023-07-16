@@ -5,31 +5,41 @@ plugins {
 
 android {
     namespace 'org.alie.construct'
-    compileSdk 33
+    compileSdk compile_sdk
 
     defaultConfig {
         applicationId "org.alie.construct"
-        minSdk 26
-        targetSdk 33
+        minSdk min_sdk
+        targetSdk target_sdk
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    viewBinding {
+        enabled = true
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+
+
+    sourceSets {
+        main {
+            java.srcDirs = ["src/main/arsenal/java"]
+            res.srcDirs =  ["src/main/arsenal/layouts","../module_res/src/main/arsenal/res"]
+            manifest.srcFile "src/main/arsenal/AndroidManifest.xml"
+        }
+//        main {
+//            java.srcDirs = ["src/main/milan/java"]
+//            res.srcDirs =  ["src/main/milan/layouts","../module_res/src/main/milan/res"]
+//            manifest.srcFile "src/main/milan/AndroidManifest.xml"
+//        }
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
+    compileOptions(compile_options)
+    kotlinOptions(kotlin_options)
 }
 
 dependencies {
@@ -38,56 +48,5 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-}
-
-/**
- * 01、字符串拼接
- * 02、def声明
- * 03、list map 定义
- * 04、方法定义与调用
- * 05、调用全局变量
- */
-task work01 {
-    def tip1 = "xigua"
-    println "work01 tip1:$tip1"
-}
-
-task work02 {
-    def tip1 = "xigua"
-    def tip2 = "nangua"
-    println "work02 tip1:$tip1 tip2:$tip2"
-}
-
-task work03 {
-    def list= []
-    list[0] = 0
-    list[1] = 1
-    list.each {
-        println "work03 size:${list.size()} it:$it"
-    }
-}
-
-task work04 {
-    def map = [:]
-    map.name = "xigua"
-    map.age = "10"
-    println "work04 name:${map.name} size:${map.size()}"
-}
-
-task work05 {
-    int value = funWork05(5,4)
-    println("work5 value:$value")
-}
-
-def funWork05(int a,int b) {
-    a+b
-}
-
-task work06 {
-    // 两种方法都能获取到根变量
-    println "work06 test01Tip:${test01Tip01} test01Map:${test01Map.a}"
-    println "work06 test01Tip:${rootProject.ext.test01Tip01} test01Map:${rootProject.ext.test01Map.a}"
+    implementation project(path: ':module_res')
 }

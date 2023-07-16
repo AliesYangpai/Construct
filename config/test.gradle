@@ -1,7 +1,0 @@
-ext {
-    def test01Map = [:]
-    test01Map.a = 1
-    test01Map.b = 2
-    test01Tip01 = "tip01"
-    ext.test01Map = test01Map // 【注】此处要进行ext的赋值，否则其他module的gradle无法引用到
-}

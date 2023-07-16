@@ -1,0 +1,13 @@
+ext {
+    compile_sdk = 33
+    min_sdk = 26
+    target_sdk =  33
+    compile_options =  {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlin_options = {
+        jvmTarget = '1.8'
+    }
+}
