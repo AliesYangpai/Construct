@@ -23,3 +23,4 @@ dependencyResolutionManagement {
 rootProject.name = "Construct"
 include ':app'
 include ':module_res'
+include ':module_ability'

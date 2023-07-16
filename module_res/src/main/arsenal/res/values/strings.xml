@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Construct</string>
     <string name="hello_tip">hello arsenal</string>
+    <string name="error_tip">arsenal error</string>
 </resources>
