@@ -1,0 +1,37 @@
+ext {
+    flavor_dimensions = "team"
+    product_flavors = {
+        arsenal {
+            dimension = flavor_dimensions
+        }
+        milan {
+            dimension = flavor_dimensions
+        }
+    }
+
+    source_sets_app = {
+
+        arsenal {
+            java.srcDirs = ["src/main/arsenal/java"]
+            res.srcDirs =  ["src/main/arsenal/layouts","../module_res/src/main/arsenal/res"]
+            manifest.srcFile "src/main/arsenal/AndroidManifest.xml"
+        }
+        milan {
+            java.srcDirs = ["src/main/milan/java"]
+            res.srcDirs =  ["src/main/milan/layouts","../module_res/src/main/milan/res"]
+            manifest.srcFile "src/main/milan/AndroidManifest.xml"
+        }
+    }
+
+    source_set_ablility = {
+
+        arsenal {
+            res.srcDirs =  ["../module_res/src/main/arsenal/res"]
+            jniLibs.srcDirs = ["../module_lib/libs/arsenal"]
+        }
+        milan {
+            res.srcDirs =  ["../module_res/src/main/milan/res"]
+            jniLibs.srcDirs = ["../module_lib/libs/milan"]
+        }
+    }
+}

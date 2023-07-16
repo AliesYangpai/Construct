@@ -13,6 +13,7 @@ android {
         targetSdk target_sdk
         versionCode 1
         versionName "1.0"
+        flavorDimensions "team"
     }
 
     viewBinding {
@@ -25,21 +26,10 @@ android {
         }
     }
 
-
-    sourceSets {
-        main {
-            java.srcDirs = ["src/main/arsenal/java"]
-            res.srcDirs =  ["src/main/arsenal/layouts","../module_res/src/main/arsenal/res"]
-            manifest.srcFile "src/main/arsenal/AndroidManifest.xml"
-        }
-//        main {
-//            java.srcDirs = ["src/main/milan/java"]
-//            res.srcDirs =  ["src/main/milan/layouts","../module_res/src/main/milan/res"]
-//            manifest.srcFile "src/main/milan/AndroidManifest.xml"
-//        }
-    }
+    productFlavors(product_flavors)
     compileOptions(compile_options)
     kotlinOptions(kotlin_options)
+    sourceSets (source_sets_app)
 }
 
 dependencies {

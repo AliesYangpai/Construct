@@ -11,6 +11,7 @@ android {
         minSdk min_sdk
         targetSdk target_sdk
         consumerProguardFiles "consumer-rules.pro"
+        flavorDimensions "team"
     }
 
     buildTypes {
@@ -21,9 +22,4 @@ android {
     }
     compileOptions(compile_options)
     kotlinOptions(kotlin_options)
-}
-
-dependencies {
-
-
 }

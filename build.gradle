@@ -5,6 +5,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
 }
 apply from:"./config/global.gradle"
+apply from:"./config/flavor.gradle"
 gradle.beforeProject {
     println("beforeProject:$project.name")
 }
