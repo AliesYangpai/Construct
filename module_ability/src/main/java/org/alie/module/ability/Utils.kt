@@ -1,7 +1,7 @@
 package org.alie.module.ability
 
 import android.content.Context
-import org.alie.libarsenal.ArsenalMgr
+import org.alie.module.libs.CommonUtil
 
 object Utils {
     fun getErrorTip(context:Context):String {
@@ -9,5 +9,5 @@ object Utils {
     }
 
 
-    fun getLibTip():String  = ArsenalMgr.getType()
+    fun getLibTip():String  = CommonUtil.getLibSign()
 }

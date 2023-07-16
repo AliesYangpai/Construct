@@ -24,7 +24,6 @@ ext {
     }
 
     source_set_ablility = {
-
         arsenal {
             res.srcDirs =  ["../module_res/src/main/arsenal/res"]
             jniLibs.srcDirs = ["../module_lib/libs/arsenal"]
@@ -32,6 +31,18 @@ ext {
         milan {
             res.srcDirs =  ["../module_res/src/main/milan/res"]
             jniLibs.srcDirs = ["../module_lib/libs/milan"]
+        }
+    }
+
+    source_set_libs = {
+        arsenal {
+            java.srcDirs = ["src/main/arsenal/java"]
+            jniLibs.srcDirs =  ["libs/arsenal"]
+        }
+
+        milan {
+            java.srcDirs = ["src/main/milan/java"]
+            jniLibs.srcDirs =  ["libs/milan"]
         }
     }
 }

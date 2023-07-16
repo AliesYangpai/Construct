@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    namespace 'org.alie.module.ability'
+    namespace 'org.alie.module.libs'
     compileSdk compile_sdk
 
     defaultConfig {
         minSdk min_sdk
         targetSdk target_sdk
-        consumerProguardFiles "consumer-rules.pro"
         flavorDimensions "team"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -21,19 +21,13 @@ android {
         }
     }
 
+    productFlavors(product_flavors)
     compileOptions(compile_options)
     kotlinOptions(kotlin_options)
-    productFlavors(product_flavors)
-    sourceSets (source_set_ablility)
-
+    sourceSets (source_set_libs)
 }
 
 dependencies {
-
-
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation project(path: ':module_res')
-    implementation project(path: ':module_libs')
+    arsenalImplementation files("./libs/arsenal/lib_arsenal.jar")
+    milanImplementation files("./libs/milan/lib_milan.jar")
 }

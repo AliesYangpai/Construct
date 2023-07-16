@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdk min_sdk
         targetSdk target_sdk
-        consumerProguardFiles "consumer-rules.pro"
         flavorDimensions "team"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
