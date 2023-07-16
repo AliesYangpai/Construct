@@ -10,7 +10,6 @@ ext {
     }
 
     source_sets_app = {
-
         arsenal {
             java.srcDirs = ["src/main/arsenal/java"]
             res.srcDirs =  ["src/main/arsenal/layouts","../module_res/src/main/arsenal/res"]
@@ -43,6 +42,16 @@ ext {
         milan {
             java.srcDirs = ["src/main/milan/java"]
             jniLibs.srcDirs =  ["libs/milan"]
+        }
+    }
+
+    source_sets_res = {
+        arsenal {
+            res.srcDirs =  ["./src/main/arsenal/res"]
+        }
+
+        milan {
+            res.srcDirs =  ["./src/main/milan/res"]
         }
     }
 }

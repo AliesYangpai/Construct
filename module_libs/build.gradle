@@ -21,9 +21,9 @@ android {
         }
     }
 
-    productFlavors(product_flavors)
     compileOptions(compile_options)
     kotlinOptions(kotlin_options)
+    productFlavors(product_flavors)
     sourceSets (source_set_libs)
 }
 
